@@ -3,4 +3,4 @@
 > Lo terminaré este año?
 
 - [x] Day 1
-- [ ] Day 2
+- [x] Day 2
