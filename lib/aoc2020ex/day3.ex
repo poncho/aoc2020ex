@@ -29,7 +29,7 @@ defmodule Aoc2020ex.Day3 do
     |> Enum.map(fn increments ->
       slide(map, increments)
     end)
-    |> Enum.reduce(1, fn tree_amount, acc -> acc * IO.inspect(tree_amount, label: "TREES") end)
+    |> Enum.reduce(1, fn tree_amount, acc -> acc * tree_amount end)
   end
 
   defp slide(map) do
