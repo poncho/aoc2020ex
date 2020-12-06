@@ -1,5 +1,6 @@
 defmodule Aoc2020ex.Day2 do
   alias Aoc2020ex.Input
+  alias Aoc2020ex.Utils
 
   def run do
     "day2.txt"
@@ -32,7 +33,7 @@ defmodule Aoc2020ex.Day2 do
   end
 
   defp valid_pwd?({letter, min, max, pwd}) do
-    characters = split_into_chars(pwd)
+    characters = Utils.split_into_chars(pwd)
 
     total_letters =
       characters
@@ -43,7 +44,7 @@ defmodule Aoc2020ex.Day2 do
   end
 
   defp valid_pwd_2?({letter, index_1, index_2, pwd}) do
-    characters = split_into_chars(pwd)
+    characters = Utils.split_into_chars(pwd)
 
     Enum.at(characters, index_1)
     Enum.at(characters, index_2)
@@ -52,10 +53,6 @@ defmodule Aoc2020ex.Day2 do
     valid2? = Enum.at(characters, index_2 - 1) == letter
 
     xor(valid1?, valid2?)
-  end
-
-  defp split_into_chars(string) do
-    for <<c::utf8 <- string>>, do: <<c::utf8>>
   end
 
   defp xor(b1, b2) do
